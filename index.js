@@ -4,6 +4,7 @@ app.use(express.json());
 const morgan = require("morgan");
 const cors = require("cors");
 app.use(cors());
+app.use(express.static("dist"));
 
 morgan.token("body", (req, res) => {
   return JSON.stringify(req.body);
@@ -50,6 +51,11 @@ let persons = [
     id: 4,
     name: "Mary Poppendieck",
     number: "39-23-6423122",
+  },
+  {
+    id: 5,
+    name: "Gayle Becker",
+    number: "39-77-6423122",
   },
 ];
 
